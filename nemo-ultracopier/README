@@ -1,0 +1,26 @@
+==============================================================================
+=        Nemo Ultracopier - Copy files or folders on Nemo with UltraCopier   =
+==============================================================================
+
+Nemo Ultracopier is an utility to integrate UltraCopier in the Nemo file manager.
+
+Nemo Ultracopier helps you to integrate on Nemo a copying high performance using UltraCopier. This last software allow you to stop and then continue the copy. Also make an efficient use of the multiprocessing to accelerate the copy process. If you carry a copy of many files, even after reading errors, common in traditional copiers, Ultracopier can continue copying files and alert you at the end without need to stop the copy to the first error.
+
+Features include:
+    * Paste several files on a not open folder.
+    * Paste several files on an open folder.
+
+This package is original develoment by Lester Carballo Pérez (lestcape), and have also a version for Nemo file manager.
+
+Source code may be obtained for Nemo-ultracopier from their websites:
+
+Nemo Ultracopier Web Site: http://github.com/lestcape/Nemo-UltraCopier-Extension
+
+Nautilus Ultracopier Web Site: http://github.com/lestcape/Nautilus-UltraCopier-Extension
+
+Change Log:
+v0.1.0 - August 01, 2011 (Initial release)
+    * Adds an entry to Nautilus contextual menu to copy files or folders with UltraCopier.
+
+v0.1.1 - November 08, 2014 (Update to work again)
+    * Fix several errors and warnings. Update to work on Nemo.

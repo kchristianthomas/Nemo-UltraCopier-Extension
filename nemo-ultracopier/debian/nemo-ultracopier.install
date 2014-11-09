@@ -1,0 +1,3 @@
+debian/tmp/usr/share/locale
+src/nemo_ultracopier.py usr/share/nemo-python/extensions
+pixmap/nemo-ultracopier.png usr/share/pixmaps

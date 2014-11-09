@@ -1,0 +1,33 @@
+# Spanish translation for the nemo-ultracopier
+# Copyright (C) 2011 Lester Carballo Párez <lestcape@gmail.com>
+# This file is distributed under the same license as the nemo-ultracopier package.
+# Lester Carballo Párez <lestcape@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nemo-ultracopier 0.1.1\n"
+"Report-Msgid-Bugs-To: lestcape@gmail.com\n"
+"POT-Creation-Date: 2014-11-09 02:21+0300\n"
+"PO-Revision-Date: 2014-11-09 18:26+0000\n"
+"Last-Translator: lestcape <lestcape@gmail.com>\n"
+"Language-Team: lestcape <lestcape@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+
+#: src/nemo_ultracopier.py:25
+msgid "Paste on folder with UltraCopier"
+msgstr "Pegar en la carpeta con UltraCopier"
+
+#: src/nemo_ultracopier.py:26
+msgid "Move or copy files previously selected by a Cut or Copy command in to the current folder"
+msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o Copia a la carpeta actual"
+
+#: src/nemo_ultracopier.py:38
+msgid "Paste with UltraCopier"
+msgstr "Pegar con UltraCopier"
+
+#: src/nemo_ultracopier.py:39
+msgid "Move or copy files previously selected by a Cut or Copy command"
+msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o Copia"

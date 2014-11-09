@@ -1,0 +1,11 @@
+nemo-ultracopier (0.1.1ubuntu1) trusty; urgency=medium
+
+  * 0.1.1
+
+ -- Lester Carballo Pérez <lestcape@gmail.com>  Sat, 08 Nov 2014 21:05:02 -0600
+
+nemo-ultracopier (0.1.0ubuntu1) hardy; urgency=low
+
+  *  Copy from nautilus-ultracopier 0.1.0
+
+ -- Lester Carballo Pérez <lestcape@gmail.com>  Mon, 01 Aug 2011 18:12:51 +0200
