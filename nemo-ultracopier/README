@@ -28,3 +28,6 @@ v0.1.1 - November 08, 2014 (Update to work again)
 v0.2.1 - November 13, 2014 (Enable shortcut keys)
     * Enable shortcut keys
     * Show the menu items different to be always actives.
+
+0.3.1 - November 13, 2014 (Enable shortcut keys)
+    * Update correctly the file uri.

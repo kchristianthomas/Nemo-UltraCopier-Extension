@@ -1,6 +1,13 @@
 #! /usr/bin/python
 #  -*- coding: utf-8 -*-
 
+# Nemo-UltraCopier-Extension
+#==========================
+#
+# An utility to integrate UltraCopier in the Nemo file manager.
+#
+# Author: Lester Carballo Pérez(lestcape@gmail.com)
+
 from gi.repository import Gtk, Gdk, Nemo, GObject, Gio, GLib
 import mimetypes
 import os
@@ -39,6 +46,7 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
         self.call_timeout = 0
 
     def init_accel(self):
+        '''Called one time to Init the keybindings'''
         path = self.accel_file.get_path()
         self.accel_name = self.read_accel_from_file()
         self.monitor = self.accel_file.monitor_file(Gio.FileMonitorFlags.NONE, None)
@@ -51,6 +59,7 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
             self.restore_accel(KEY_ACCEL)
 
     def read_accel_from_file(self):
+        '''Called when the file of keybindings change'''
         path = self.accel_file.get_path()
         accel_name = KEY_ACCEL
         if not os.path.isfile(path):
@@ -64,6 +73,7 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
         return accel_name
 
     def restore_accel(self, accel):
+        '''Called when the user select a wrong keybindings'''
         if self.monitor_id > 0:
             self.monitor.disconnect(self.monitor_id)
         path = self.accel_file.get_path()
@@ -86,13 +96,24 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
         self.monitor_id = self.monitor.connect("changed", self.on_monitor_change_file)
 
     def create_default_accel(self, window, file):
+        '''Called when the user enter in a new background'''
         default_accel_group = Gtk.accel_groups_from_object(window)[0]
         if (window not in self.source_windows):
             self.source_windows[window] = [file, default_accel_group, False]
             window.connect("focus_in_event", self.on_focus_in_window)
             window.connect("destroy", self.on_destroy)
+        else:
+            self.source_windows[window][0] = file
+
+        if file:
+            uri = file.get_uri()
+            if (uri.startswith("x-nemo-desktop:")) or (uri.startswith("x-nautilus-desktop:")):
+                uri = "file://%s" %(GLib.get_user_special_dir(GLib.USER_DIRECTORY_DESKTOP))
+            src_file = Gio.File.new_for_uri(uri)
+            self.src_path = src_file.get_path()
 
     def on_destroy(self, window):
+        '''Called when the user close a windows'''
         if self.window_accel_group == window:
             self.window_accel_group.remove_accel_group(self.accel_group)
             self.window_accel_group = None
@@ -100,6 +121,7 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
             del self.source_windows[window]
 
     def on_focus_in_window(self, window, ref):
+        '''Called when the user select a new windows'''
         if (self.accel_name == self.default_accel_name):
             if (not self.source_windows[window][2]):
                 key, mods = Gtk.accelerator_parse(self.accel_name)
@@ -127,10 +149,12 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
             self.src_path = src_file.get_path()
 
     def on_monitor_change_file(self, monitor, file, o, event):
+        '''Called when the user modify the file of keybining'''
         if self.call_timeout == 0:
             self.call_timeout = GObject.timeout_add(100, self.on_change_accel)
 
     def on_change_accel(self):
+        '''Called when the user swap the keybining'''
         if self.call_timeout > 0:
             GObject.source_remove(self.call_timeout)
             self.call_timeout = 0
@@ -151,6 +175,7 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
             self.restore_accel(self.accel_name)
 
     def change_accel(self, accel_name=""):
+        '''Called when the user swap to a valid the keybining'''
         if accel_name != self.accel_name: 
             if self.window_accel_group:
                 self.window_accel_group.remove_accel_group(self.accel_group)
@@ -173,21 +198,35 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
             self.accel_name = accel_name
 
     def callback_accel_default(self, *arg):
+        '''Called when the user use Control+V'''
         self._menu_paste()
 
     def callback_accel(self, a_groups, window, key, gdk_mask):
+        '''Called when the user don't use Control+V'''
         self._menu_paste()
 
     def on_clipboard_change(self, *args):
-        self._update_clipboard_data()
+        '''Called when the user add new values to the clipboard'''
+        self.action = ""
+        self.file_list = ""
+        src_files = self.clipboard.wait_for_contents(Gdk.Atom.intern("x-special/gnome-copied-files", False))
+        if src_files is not None:
+            info = src_files.get_data().splitlines()
+            self.action = info[0]
+            files = info[1:]
+            for file_uri in files:
+                try:
+                    file = Gio.File.new_for_uri(file_uri)
+                    if file.query_exists():
+                        self.file_list += " '" + file.get_path() + "'"
+                except:
+                    pass
 
     def get_file_items(self, window, files):
-        '''Called when the user selects a file in Nautilus. We want to check
+        '''Called when the user selects a file in Nemo. We want to check
         whether those are supported files or directories with supported files.'''
         if (len(files) != 1) or (not self._valid_file(files[0])) or (not files[0].is_directory()):
             return []
-
-        self.create_default_accel(window, files[0])
 
         self.pasteItem = Nemo.MenuItem(name='UltraCopier::Paste_UltraCopier_item',
                               label=_('Paste on folder with UltraCopier'),
@@ -196,8 +235,7 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
                               sensitive=False)
         
         src_file = Gio.File.new_for_uri(files[0].get_uri())
-        self.src_path = src_file.get_path()
-        self.pasteItem.connect("activate", self._menu_paste)
+        self.pasteItem.connect("activate", self._menu_paste_on_folder, src_file.get_path())
         if (self.action not in ["copy","cut"]) or (self.file_list is ""):
             self.pasteItem.set_property("sensitive", False)
         else:
@@ -205,6 +243,8 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
         return self.pasteItem,
 
     def get_background_items(self, window, file):
+        '''Called when the user selects the background in Nemo. We want to check
+        whether those are supported files or directories with supported files.'''
         self.create_default_accel(window, file)
         self.pasteItem = Nemo.MenuItem(name='UltraCopier::Paste_UltraCopier_Folder_item',
                               label=_('Paste with UltraCopier'),
@@ -226,29 +266,18 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
         else:
             return False
 
-    def _update_clipboard_data(self):
-        self.action = ""
-        self.file_list = ""
-        src_files = self.clipboard.wait_for_contents(Gdk.Atom.intern("x-special/gnome-copied-files", False))
-        if src_files is not None:
-            info = src_files.get_data().splitlines()
-            self.action = info[0]
-            files = info[1:]
-            for file_uri in files:
-                try:
-                    file = Gio.File.new_for_uri(file_uri)
-                    if file.query_exists():
-                        self.file_list += " '" + file.get_path() + "'"
-                except:
-                    pass
-
-    def _menu_paste(self, menu=None):
+    def _menu_paste_on_folder(self, menu, folder):
         '''Called when the user selects the menu.
         Launch CopyUltraCopier with the files selected.'''
         if (self.file_list is not ""):
             if self.action == "copy":
-                os.system("ultracopier cp %s '%s' &" % (self.file_list, self.src_path))
+                os.system("ultracopier cp %s '%s' &" % (self.file_list, folder))
             elif self.action == "cut":
-                os.system("ultracopier mv %s '%s' &" % (self.file_list, self.src_path))
+                os.system("ultracopier mv %s '%s' &" % (self.file_list, folder))
                 self.clipboard.set_text(" ")
                 self.clipboard.store()
+
+    def _menu_paste(self, menu=None):
+        '''Called when the user selects the backgroud menu or used
+        keyboard instead. Launch CopyUltraCopier with the files selected.'''
+        self._menu_paste_on_folder(menu, self.src_path)

@@ -1,4 +1,10 @@
-nemo-ultracopier (0.2.1ubuntu2) trusty; urgency=medium
+nemo-ultracopier (0.3.1ubuntu1) trusty; urgency=medium
+
+  * 0.3.1
+
+ -- Lester Carballo Pérez <lestcape@gmail.com>  Thu, 13 Nov 2014 16:14:05 -0600
+
+nemo-ultracopier (0.2.1ubuntu1) trusty; urgency=medium
 
   * 0.2.1
 
