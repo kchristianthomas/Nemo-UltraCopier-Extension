@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-ultracopier 0.1.1\n"
+"Project-Id-Version: nemo-ultracopier 0.2.1\n"
 "Report-Msgid-Bugs-To: lestcape@gmail.com\n"
 "POT-Creation-Date: 2014-11-09 02:21+0300\n"
 "PO-Revision-Date: 2014-11-09 18:26+0000\n"
@@ -16,18 +16,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
 
-#: src/nemo_ultracopier.py:25
+#: src/nemo_ultracopier.py:82
+msgid "The current shortcut key is not valid, we return to use '%s' as a shortcut key."
+msgstr ""
+
+#: src/nemo_ultracopier.py:142
+msgid "Will be required restart Nemo to be used again the standard shortcut key."
+msgstr ""
+
+#: src/nemo_ultracopier.py:143
+msgid "Do you want to restart Nemo?"
+msgstr ""
+
+#: src/nemo_ultracopier.py:193
 msgid "Paste on folder with UltraCopier"
 msgstr "Pegar en la carpeta con UltraCopier"
 
-#: src/nemo_ultracopier.py:26
+#: src/nemo_ultracopier.py:194
 msgid "Move or copy files previously selected by a Cut or Copy command in to the current folder"
 msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o Copia a la carpeta actual"
 
-#: src/nemo_ultracopier.py:38
+#: src/nemo_ultracopier.py:210
 msgid "Paste with UltraCopier"
 msgstr "Pegar con UltraCopier"
 
-#: src/nemo_ultracopier.py:39
+#: src/nemo_ultracopier.py:211
 msgid "Move or copy files previously selected by a Cut or Copy command"
 msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o Copia"

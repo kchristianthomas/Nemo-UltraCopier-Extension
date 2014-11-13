@@ -24,3 +24,7 @@ v0.1.0 - August 01, 2011 (Initial release)
 
 v0.1.1 - November 08, 2014 (Update to work again)
     * Fix several errors and warnings. Update to work on Nemo.
+
+v0.2.1 - November 13, 2014 (Enable shortcut keys)
+    * Enable shortcut keys
+    * Show the menu items different to be always actives.
