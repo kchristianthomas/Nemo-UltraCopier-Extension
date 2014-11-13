@@ -37,10 +37,10 @@ msgstr ""
 msgid "Move or copy files previously selected by a Cut or Copy command in to the current folder"
 msgstr ""
 
-#: src/nemo-compare.py:210
+#: src/nemo_ultracopier.py:210
 msgid "Paste with UltraCopier"
 msgstr ""
 
-#: src/nemo-compare.py:211
+#: src/nnemo_ultracopier.py:211
 msgid "Move or copy files previously selected by a Cut or Copy command"
 msgstr ""

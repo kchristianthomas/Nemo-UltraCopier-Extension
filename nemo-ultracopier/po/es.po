@@ -18,15 +18,15 @@ msgstr ""
 
 #: src/nemo_ultracopier.py:82
 msgid "The current shortcut key is not valid, we return to use '%s' as a shortcut key."
-msgstr ""
+msgstr "La tecla de acceso directo actual no es válida, volvemos a utilizar '%s' como tecla de acceso directo."
 
 #: src/nemo_ultracopier.py:142
 msgid "Will be required restart Nemo to be used again the standard shortcut key."
-msgstr ""
+msgstr "Será necesario reiniciar Nemo para ser utilizada de nuevo la tecla de acceso directo estándar."
 
 #: src/nemo_ultracopier.py:143
 msgid "Do you want to restart Nemo?"
-msgstr ""
+msgstr "¿Quieres reiniciar Nemo?"
 
 #: src/nemo_ultracopier.py:193
 msgid "Paste on folder with UltraCopier"
