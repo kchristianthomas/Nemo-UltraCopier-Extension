@@ -514,7 +514,7 @@ class AccelChanger:
             file.close()
         dialog = Gtk.MessageDialog(None, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK)
         accel = accel.replace("<", "&lt;").replace(">", "&gt;")
-        msg = "The current shortcut key is not valid, we return to use '%s' as a shortcut key."%(accel)
+        msg = _("The current shortcut key is not valid, we return to use '%s' as a shortcut key.")%(accel)
         dialog.set_markup("<b>%s</b>" % msg)
         dialog.run()
         dialog.destroy()
