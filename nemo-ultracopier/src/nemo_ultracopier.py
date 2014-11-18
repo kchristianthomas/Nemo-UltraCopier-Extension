@@ -207,8 +207,8 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
             if Gtk.accelerator_valid(key, mods):
                 if self.accel_name == self.default_accel_name:
                     dialog = Gtk.MessageDialog(None, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.YES_NO)
-                    dialog.set_markup("<b>%s</b>" % _("Will be required restart Nemo to be used again the standard shortcut key."))
-                    dialog.format_secondary_markup(_("Do you want to restart Nemo?"))
+                    dialog.set_markup("<b>%s</b>" % _("Do you want to restart Nemo?"))
+                    dialog.format_secondary_markup(_("Please save your work first.\nWill be required restart Nemo to be used again the standard shortcut key."))
                     response = dialog.run()
                     dialog.destroy()
                     if response == Gtk.ResponseType.YES:
@@ -296,8 +296,8 @@ class UltraCopier(GObject.GObject, Nemo.MenuProvider):
                               icon='nemo-ultracopier',
                               sensitive=True)
         self.settingItem = Nemo.MenuItem(name='UltraCopier::Setting_UltraCopier_Folder_item',
-                              label=_('UltraCopier Settings'),
-                              tip=_('Configure the ultracopier settings'),
+                              label=_('UltraCopier Setting'),
+                              tip=_('Configure the Nemo UltraCopier setting'),
                               icon='gtk-preferences',
                               sensitive=True)
         list_items = [self.pasteItem,] 

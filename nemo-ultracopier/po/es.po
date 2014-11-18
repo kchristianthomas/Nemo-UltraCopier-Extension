@@ -5,41 +5,75 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-ultracopier 0.2.1\n"
+"Project-Id-Version: nemo-ultracopier 0.4.1\n"
 "Report-Msgid-Bugs-To: lestcape@gmail.com\n"
 "POT-Creation-Date: 2014-11-09 02:21+0300\n"
-"PO-Revision-Date: 2014-11-09 18:26+0000\n"
+"PO-Revision-Date: 2014-11-17 22:16-0600\n"
 "Last-Translator: lestcape <lestcape@gmail.com>\n"
 "Language-Team: lestcape <lestcape@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: src/nemo_ultracopier.py:82
-msgid "The current shortcut key is not valid, we return to use '%s' as a shortcut key."
-msgstr "La tecla de acceso directo actual no es válida, volvemos a utilizar '%s' como tecla de acceso directo."
+#: src/nemo_ultracopier.py:96
+msgid "The current shortcut key is not valid, we return to use '%s' as a shortcut "
+"key."
+msgstr "La tecla de acceso directo actual no es válida, volvemos a utilizar '%s' "
+"como tecla de acceso directo."
 
-#: src/nemo_ultracopier.py:142
-msgid "Will be required restart Nemo to be used again the standard shortcut key."
-msgstr "Será necesario reiniciar Nemo para ser utilizada de nuevo la tecla de acceso directo estándar."
-
-#: src/nemo_ultracopier.py:143
+#: src/nemo_ultracopier.py:210
 msgid "Do you want to restart Nemo?"
 msgstr "¿Quieres reiniciar Nemo?"
 
-#: src/nemo_ultracopier.py:193
+#: src/nemo_ultracopier.py:211
+msgid "Please save your work first.\n"
+"Will be required restart Nemo to be used again the standard shortcut key."
+msgstr "Por favor, guarde su trabajo primero.\n"
+"Será necesario reiniciar Nemo para ser utilizada de nuevo la tecla de acceso "
+"directo estándar."
+
+#: src/nemo_ultracopier.py:276
 msgid "Paste on folder with UltraCopier"
 msgstr "Pegar en la carpeta con UltraCopier"
 
-#: src/nemo_ultracopier.py:194
-msgid "Move or copy files previously selected by a Cut or Copy command in to the current folder"
-msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o Copia a la carpeta actual"
+#: src/nemo_ultracopier.py:277
+msgid "Move or copy files previously selected by a Cut or Copy command in to the "
+"current folder"
+msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o "
+"Copia a la carpeta actual"
 
-#: src/nemo_ultracopier.py:210
+#: src/nemo_ultracopier.py:294
 msgid "Paste with UltraCopier"
 msgstr "Pegar con UltraCopier"
 
-#: src/nemo_ultracopier.py:211
+#: src/nemo_ultracopier.py:295
 msgid "Move or copy files previously selected by a Cut or Copy command"
 msgstr "Mover o copiar el archivo seleccionado en la acción anterior de Corte o Copia"
+
+#: src/nemo_ultracopier.py:299
+msgid "UltraCopier Setting"
+msgstr "Configurar UltraCopier"
+
+#: src/nemo_ultracopier.py:300
+msgid "Configure the Nemo UltraCopier setting"
+msgstr "Configurar el ajuste de Nemo Ultracopier"
+
+#: src/nemo_ultracopier.py:352
+msgid "UltraCopier Accel Changer"
+msgstr "Ultracopier Cambiador de Atajo"
+
+#: src/nemo_ultracopier.py:364
+msgid "UltraCopier accel changer for the Paste action..."
+msgstr "Ultracopier cambiador de atajo para la acción Pegar..."
+
+#: src/nemo_ultracopier.py:367
+msgid "Click to set a new accelerator key.\n"
+"Press Escape or click again to cancel the operation."
+msgstr "Haga clic para establecer una nueva tecla de atajo.\n"
+"Presione Escape o haga clic de nuevo para cancelar la operación."
+
+#: src/nemo_ultracopier.py:401
+msgid "Pick an accelerator..."
+msgstr "Escoja un atajo..."

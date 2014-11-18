@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: nemo-ultracopier 0.2.1\n"
+"Project-Id-Version: nemo-ultracopier 0.4.1\n"
 "Report-Msgid-Bugs-To: lestcape@gmail.com\n"
 "POT-Creation-Date: 2014-11-09 02:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -17,30 +17,54 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/nemo_ultracopier.py:82
+#: src/nemo_ultracopier.py:96
 msgid "The current shortcut key is not valid, we return to use '%s' as a shortcut key."
 msgstr ""
 
-#: src/nemo_ultracopier.py:142
-msgid "Will be required restart Nemo to be used again the standard shortcut key."
-msgstr ""
-
-#: src/nemo_ultracopier.py:143
+#: src/nemo_ultracopier.py:210
 msgid "Do you want to restart Nemo?"
 msgstr ""
 
-#: src/nemo_ultracopier.py:193
+#: src/nemo_ultracopier.py:211
+msgid "Please save your work first.\nWill be required restart Nemo to be used again the standard shortcut key."
+msgstr ""
+
+#: src/nemo_ultracopier.py:276
 msgid "Paste on folder with UltraCopier"
 msgstr ""
 
-#: src/nemo_ultracopier.py:194
+#: src/nemo_ultracopier.py:277
 msgid "Move or copy files previously selected by a Cut or Copy command in to the current folder"
 msgstr ""
 
-#: src/nemo_ultracopier.py:210
+#: src/nemo_ultracopier.py:294
 msgid "Paste with UltraCopier"
 msgstr ""
 
-#: src/nnemo_ultracopier.py:211
+#: src/nemo_ultracopier.py:295
 msgid "Move or copy files previously selected by a Cut or Copy command"
+msgstr ""
+
+#: src/nemo_ultracopier.py:299
+msgid "UltraCopier Setting"
+msgstr ""
+
+#: src/nemo_ultracopier.py:300
+msgid "Configure the Nemo UltraCopier setting"
+msgstr ""
+
+#: src/nemo_ultracopier.py:352
+msgid "UltraCopier Accel Changer"
+msgstr ""
+
+#: src/nemo_ultracopier.py:364
+msgid "UltraCopier accel changer for the Paste action..."
+msgstr ""
+
+#: src/nemo_ultracopier.py:367
+msgid "Click to set a new accelerator key.\nPress Escape or click again to cancel the operation."
+msgstr ""
+
+#: src/nemo_ultracopier.py:401
+msgid "Pick an accelerator..."
 msgstr ""
