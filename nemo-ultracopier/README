@@ -31,3 +31,6 @@ v0.2.1 - November 13, 2014 (Enable shortcut keys)
 
 0.3.1 - November 13, 2014 (Enable shortcut keys)
     * Update correctly the file uri.
+
+0.4.1 - November 17, 2014 (Change the keybinding in a GUI)
+    * Now we can change the keybinding in a GUI.
